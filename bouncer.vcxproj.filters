@@ -23,6 +23,9 @@
     <ClInclude Include="src\bouncer.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\tracer.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />

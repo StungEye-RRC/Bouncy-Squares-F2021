@@ -3,20 +3,26 @@
 //--------------------------------------------------------------
 void ofApp::setup() {
 	ofSetRectMode(OF_RECTMODE_CENTER);
-	for (auto i = 0; i < 15; ++i) {
+	ofSetWindowPosition(1200, 200);
+
+	bouncers.reserve(numberOfBouncers);
+
+	for (auto i = 0; i < numberOfBouncers; ++i) {
+		// We could create bouncer objects and then push them to the vector.
+		/*
 		const float xPosition = ofRandomWidth();
 		const float yPosition = ofRandomHeight();
 		const float xSpeed = ofRandom(-4, 4);
 		const float ySpeed = ofRandom(-4, 4);
+		const float size = ofRandom(3, 75);
 
-		// We could first create a bouncer object and then push
-		// it to the vector.
-		// Bouncer bouncer{xPosition, yPosition, xSpeed, ySpeed};
-		// bouncers.push_back(bouncer);
+		Bouncer bouncer{xPosition, yPosition, xSpeed, ySpeed};
+		bouncers.push_back(bouncer);
+		*/
 
 		// Or we could have the vector construct the bouncer while
 		// it places it at the end of the vector.
-		bouncers.emplace_back(xPosition, yPosition, xSpeed, ySpeed);
+		bouncers.emplace_back(ofGetWidth(), ofGetHeight());
 	}
 }
 
@@ -30,7 +36,7 @@ void ofApp::update() {
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-	for (auto bouncer : bouncers) {
+	for (const auto& bouncer : bouncers) {
 		bouncer.draw();
 	}
 }
