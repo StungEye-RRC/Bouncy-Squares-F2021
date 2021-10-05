@@ -4,7 +4,6 @@
 class Bouncer {
 	const static int maxSpeed{6};
 	const static int minSpeed{-6};
-protected:
 	float xPosition{0};
 	float yPosition{0};
 	float xSpeed{1};
