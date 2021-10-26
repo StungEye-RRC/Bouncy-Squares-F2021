@@ -25,5 +25,5 @@ public:
 
 private:
 	std::vector<Bouncer> bouncers;
-	const int numberOfBouncers{15};
+	const int numberOfBouncers{1};
 };

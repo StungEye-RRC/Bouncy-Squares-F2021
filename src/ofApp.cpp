@@ -2,7 +2,6 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-	ofSetRectMode(OF_RECTMODE_CENTER);
 	ofSetWindowPosition(1200, 200);
 
 	bouncers.reserve(numberOfBouncers);
@@ -29,6 +28,7 @@ void ofApp::setup() {
 //--------------------------------------------------------------
 void ofApp::update() {
 	for (auto& bouncer : bouncers) {
+		bouncer.processMouse(ofGetMouseX(), ofGetMouseY(), ofGetMousePressed());
 		bouncer.updatePosition();
 		bouncer.updateSpeed(ofGetWidth(), ofGetHeight());
 	}
@@ -37,6 +37,7 @@ void ofApp::update() {
 //--------------------------------------------------------------
 void ofApp::draw() {
 	for (const auto& bouncer : bouncers) {
+		std::cout << " PRE " << bouncer << " POST " << "\n";
 		bouncer.draw();
 	}
 }
